@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "8"
+
+before_install:
+  - rvm install 2.3
+  - rvm use 2.3
+  - gem install hiptest-publisher
+  - hiptest-publisher -c hiptest-publisher.conf --only=tests --test-run-id=233167
+
+script:
+  - yarn run test
+
+after_script:
+  - hiptest-publisher -c hiptest-publisher.conf --push=test-results.json --test-run-id=233167

@@ -1,0 +1,127 @@
+[
+  {
+    "description": "    User should be able to signup and login into the system with their credentials",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-authentication;user-wants-to-signup",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "User wants to signup",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "The user is on the signup page",
+            "match": {
+              "location": "features/support/login.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3248000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "User fills in their details: \"Joe Woods\", \"jwoods\", \"jwoods@sasalog.com\", \"123456\", \"0790122041\" and clicks `Save and Continue`",
+            "match": {
+              "location": "features/support/login.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 684000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "User fills in additional details: \"Build Construction\", \"0287479\", \"298757\", \"P958\", \"jwoods@sasalog.com\" and clicks `Submit`",
+            "match": {
+              "location": "features/support/login.js:32"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 4000000,
+              "error_message": "Error: No node found for selector: #element_2\n    at Object.exports.assert (/home/enwawerueli/workspace/kucumber/node_modules/puppeteer/lib/cjs/puppeteer/common/assert.js:26:15)\n    at DOMWorld.type (/home/enwawerueli/workspace/kucumber/node_modules/puppeteer/lib/cjs/puppeteer/common/DOMWorld.js:306:21)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async World.<anonymous> (/home/enwawerueli/workspace/kucumber/features/support/login.js:35:7)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "Login is successful and user lands on their dashbard",
+            "match": {
+              "location": "features/support/login.js:67"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-authentication;user-wants-to-login",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "User wants to login",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 16,
+            "name": "The user is on the login page",
+            "match": {
+              "location": "features/support/login.js:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3086000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "User inputs correct \"elixa\" plus \"123456\" and clicks `SignIn`",
+            "match": {
+              "location": "features/support/login.js:55"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2942000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "Login is successful and user lands on their dashbard",
+            "match": {
+              "location": "features/support/login.js:67"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-authentication",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "User authentication",
+    "tags": [],
+    "uri": "features/login.feature"
+  }
+]

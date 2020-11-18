@@ -10,16 +10,24 @@
         "name": "User wants to signup",
         "steps": [
           {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1829000000
+            }
+          },
+          {
             "arguments": [],
             "keyword": "Given ",
             "line": 6,
             "name": "The user is on the signup page",
             "match": {
-              "location": "features/support/login.js:7"
+              "location": "features/support/test_auth.js:24"
             },
             "result": {
               "status": "passed",
-              "duration": 3248000000
+              "duration": 2999000000
             }
           },
           {
@@ -28,11 +36,11 @@
             "line": 7,
             "name": "User fills in their details: \"Joe Woods\", \"jwoods\", \"jwoods@sasalog.com\", \"123456\", \"0790122041\" and clicks `Save and Continue`",
             "match": {
-              "location": "features/support/login.js:14"
+              "location": "features/support/test_auth.js:28"
             },
             "result": {
               "status": "passed",
-              "duration": 684000000
+              "duration": 19599000000
             }
           },
           {
@@ -41,12 +49,12 @@
             "line": 8,
             "name": "User fills in additional details: \"Build Construction\", \"0287479\", \"298757\", \"P958\", \"jwoods@sasalog.com\" and clicks `Submit`",
             "match": {
-              "location": "features/support/login.js:32"
+              "location": "features/support/test_auth.js:46"
             },
             "result": {
               "status": "failed",
-              "duration": 4000000,
-              "error_message": "Error: No node found for selector: #element_2\n    at Object.exports.assert (/home/enwawerueli/workspace/kucumber/node_modules/puppeteer/lib/cjs/puppeteer/common/assert.js:26:15)\n    at DOMWorld.type (/home/enwawerueli/workspace/kucumber/node_modules/puppeteer/lib/cjs/puppeteer/common/DOMWorld.js:306:21)\n    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n    at async World.<anonymous> (/home/enwawerueli/workspace/kucumber/features/support/login.js:35:7)"
+              "duration": 211000000,
+              "error_message": "Error: No node found for selector: #element_2\n    at Object.exports.assert (/home/enwawerueli/workspace/kucumber/node_modules/puppeteer/lib/cjs/puppeteer/common/assert.js:26:15)\n    at DOMWorld.type (/home/enwawerueli/workspace/kucumber/node_modules/puppeteer/lib/cjs/puppeteer/common/DOMWorld.js:306:21)\n    at async World.<anonymous> (/home/enwawerueli/workspace/kucumber/features/support/test_auth.js:49:5)"
             }
           },
           {
@@ -55,11 +63,19 @@
             "line": 9,
             "name": "Login is successful and user lands on their dashbard",
             "match": {
-              "location": "features/support/login.js:67"
+              "location": "features/support/test_auth.js:78"
             },
             "result": {
               "status": "skipped",
               "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 53000000
             }
           }
         ],
@@ -74,16 +90,24 @@
         "name": "User wants to login",
         "steps": [
           {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1146000000
+            }
+          },
+          {
             "arguments": [],
             "keyword": "Given ",
             "line": 16,
             "name": "The user is on the login page",
             "match": {
-              "location": "features/support/login.js:48"
+              "location": "features/support/test_auth.js:62"
             },
             "result": {
               "status": "passed",
-              "duration": 3086000000
+              "duration": 2420000000
             }
           },
           {
@@ -92,11 +116,11 @@
             "line": 17,
             "name": "User inputs correct \"elixa\" plus \"123456\" and clicks `SignIn`",
             "match": {
-              "location": "features/support/login.js:55"
+              "location": "features/support/test_auth.js:66"
             },
             "result": {
               "status": "passed",
-              "duration": 2942000000
+              "duration": 7359000000
             }
           },
           {
@@ -105,11 +129,19 @@
             "line": 18,
             "name": "Login is successful and user lands on their dashbard",
             "match": {
-              "location": "features/support/login.js:67"
+              "location": "features/support/test_auth.js:78"
             },
             "result": {
               "status": "passed",
               "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 40000000
             }
           }
         ],

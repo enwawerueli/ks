@@ -1,13 +1,27 @@
-const { Given, When, Then, setDefaultTimeout } = require("@cucumber/cucumber");
+const {
+  Given,
+  When,
+  Then,
+  setDefaultTimeout,
+  Before,
+  After,
+} = require("@cucumber/cucumber");
 const puppeteer = require("puppeteer");
 const { expect } = require("chai");
 
 setDefaultTimeout(60 * 1000);
 
-Given("The user is on the signup page", async function () {
-  this.chrome = await puppeteer.launch();
+Before(async function () {
+  this.chrome = await puppeteer.launch(/*{headless: false, slowMo: 100, defaultViewport: null}*/);
   this.page = await this.chrome.newPage();
   this.page.setDefaultTimeout(0);
+});
+
+After(async function () {
+  await this.chrome.close();
+});
+
+Given("The user is on the signup page", async function () {
   await this.page.goto("https://cp.mombasa.sasalog.com/index.php/apply");
 });
 
@@ -27,28 +41,25 @@ When(
       this.page.click("#submit_app"),
     ]);
   }
-  );
-  
-  When(
-    "User fills in additional details: {string}, {string}, {string}, {string}, {string} and clicks `Submit`",
-    async function (company, id_passport, company_regno, regno, email) {
-      await this.page.type("#element_2", company);
-      await this.page.type("#element_5", id_passport);
-      await this.page.type("#element_7", company_regno);
-      await this.page.type("#element_3", regno);
-      await this.page.type("#element_4", email);
-      await this.page.select("#element_6", "1");
-      await Promise.all([
-        this.page.waitForNavigation(),
-        this.page.click("#submit_form"),
-      ]);
+);
+
+When(
+  "User fills in additional details: {string}, {string}, {string}, {string}, {string} and clicks `Submit`",
+  async function (company, id_passport, company_regno, regno, email) {
+    await this.page.type("#element_2", company);
+    await this.page.type("#element_5", id_passport);
+    await this.page.type("#element_7", company_regno);
+    await this.page.type("#element_3", regno);
+    await this.page.type("#element_4", email);
+    await this.page.select("#element_6", "1");
+    await Promise.all([
+      this.page.waitForNavigation(),
+      this.page.click("#submit_form"),
+    ]);
   }
 );
 
 Given("The user is on the login page", async function () {
-  this.chrome = await puppeteer.launch();
-  this.page = await this.chrome.newPage();
-  this.page.setDefaultTimeout(0);
   await this.page.goto("https://cp.mombasa.sasalog.com/index.php/login");
 });
 
